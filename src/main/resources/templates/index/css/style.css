@@ -1,0 +1,296 @@
+/* Stylesheet für Selfhtml Design 10 
+  responsives Grid Layout ab Z. 262   */
+
+/* ====================================================   GLOBAL DEFINITION   ==================================================== */
+
+/* alternatives Boxmodell */
+html { 
+  box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
+} 
+
+*, ::before, ::after { 
+  box-sizing: inherit; 
+}
+
+body {
+	background: #ebebeb linear-gradient(90deg, transparent 50%, rgba(255,255,255,.3) 50%);
+	background-size: 2em 2em;
+    font: normal 1em Arial, sans-serif;  /* keine Mindestschriftgröße, dies wird dem Browser, bzw. dem Nutzer überlassen! */
+	color: black;
+}
+
+
+/** CONTENT - Elemente **/
+
+main {
+	background: white;
+	color: black;
+	padding: 1em;
+}
+
+div.startseite{
+	background:white;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/** Texte, Schriften und Absätze **/
+
+h1, h2 {
+ 	padding-left: 1em; 
+	text-transform: uppercase;
+}
+
+h1 a{
+	position: relative;
+	display: block;
+	padding: .5em 0 0 ;
+	font-weight: normal;
+	font-weight: lighter;
+	color: #c32e04;
+	text-decoration:none;
+}
+
+h1 a span {
+	color: orange; 
+}
+
+h1 a:hover, h1 a:focus {
+	background: transparent;
+}
+
+p {
+}
+
+a 	{ 
+	color: #5c82d9; 
+}
+
+a:hover, 
+a:focus {
+    color: Gainsboro;
+    background: darkorange;
+    text-decoration: none;
+}
+
+.links {
+	float:left;
+	margin: 0 10px 10px 0;
+}
+.rechts {
+	float:right;
+	margin: 0 0 10px 10px;
+}
+
+section > img {
+	width: 100%;
+}
+
+section p > img {
+	width: 50%;
+}
+
+.contact h2 {
+	color: #c32e04;
+}
+
+.contact ul {
+	list-style-type: none;
+	margin: 0.5em 0;
+	padding: 0;
+}
+
+footer {
+	background: #222;
+    color: #ccc;
+}
+
+footer a {
+	color: #5c82d9;
+}
+
+footer a:hover,
+footer:focus {
+	background: #e6f2f7;
+	color: #5c82d9;
+}
+
+
+footer p span{
+	display: block;
+	text-align: right;
+	margin-right: 2em;
+}
+
+/* Social Icons */
+#social {
+	display: inline;
+}
+#social li {
+	display: inline-block;
+	padding: 0;
+	margin: 0 0 0 .7em;
+}
+#social a {
+	text-indent: 100%;
+	background: url("../img/Design10-social.png") no-repeat scroll left top transparent;
+	display: block;
+	width: 37px;
+	height: 37px;
+	margin-top: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#social a, #social a:hover {
+	transition: none;
+}	
+#social a.dribbble  {
+	background-position: 0px 0;
+}
+#social a.dot{
+	background-position: -40px 0;
+}
+#social a.plus {
+	background-position: -80px 0;
+}
+#social a.twitter {
+	background-position: -120px 0;
+}
+#social a.in{
+	background-position: -160px 0;
+}
+#social a.fb {
+	background-position: -200px 0;
+}
+#social a:hover, 
+#social a:focus {
+	box-shadow:0 0 10px rgba(0,191,255,0.9);
+}
+
+/* Navigation */
+
+nav#navigation{
+}
+
+#navigation ul {
+	padding: 0;
+	margin: 0;
+}
+
+#navigation li {
+    list-style-type: none;
+	display: inline-block;
+}
+	
+#navigation a {
+	display: block;
+	text-align: center;
+	padding: 0.5em;  /* um Klickfläche zu vergrößern */
+	width: 8em;
+	color: white;	
+	text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#navigation a[aria-current=page]{
+	color: gold;
+}
+
+#navigation a:hover,
+#navigation a:focus {
+	background: #666;
+	color: lightyellow;
+}
+
+#navigation a:hover:after,
+#navigation a:focus:after  {
+	border-left-color: #999;
+}
+
+/* ====================================================   LAYOUT   ==================================================== */
+
+/* Mobile first! alle Blöcke haben 100%, Navigation unten*/
+body	{
+  margin: 0;	
+  padding: 0;
+}
+
+header {
+	background: black;
+	color: white;
+}
+
+main {
+	max-width: 75em;
+	margin: 3em auto;
+}
+
+.carousel {display:none;}   /* Auf kleinen Bildschirmen wird das Karussell ausgeblendet */
+
+/* 2-Spaltenlayout */
+@media only screen and (min-width: 40em) {
+header {		/* header wird zum grid-container, um Navigation zu zentrieren */
+	display: grid;
+	grid-template-columns: 1fr [main-links] minmax(10em, 75em) [main-rechts] 1fr;
+
+}
+
+footer {		/* Der footer wird zum Grid Container mit 3 Spalten innen und dem Rest außen */
+	display: grid;
+	grid-template-columns: 1fr [main-links] repeat(3, minmax(10em, 25em)) [main-rechts] 1fr;
+	grid-gap: 1em;
+}
+
+#navigation {
+	grid-column-start: main-links;
+	grid-column-end: main-rechts;	
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr [main-links] minmax(10em, 75em) [main-rechts] 1fr;
+  grid-template-rows: min-content [main-oben] 1fr [main-unten] min-content;	
+  grid-gap: 1em;
+}
+	
+header {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0; 
+	z-index: 9;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1em;			
+}
+
+main  h1,	
+.carousel {
+	grid-column: 1 / 3;
+	display: block;
+}
+.friends {
+	grid-column: 2 / 3;
+}
+}
+
+/* 3-Spaltenlayout */
+@media only screen and (min-width: 40em) {
+main	{
+	grid-template-columns: repeat(3, 1fr);
+}
+	
+main  h1,
+.carousel {
+	grid-column: 1 / 4;
+}
+}
+	
+
+
+
+

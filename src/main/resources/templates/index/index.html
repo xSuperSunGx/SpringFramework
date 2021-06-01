@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beispiel-Design Nr.10 von SelfHTML.org">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <title>NoElLi Network</title>
+</head>
+
+<body>
+
+<header>
+    <nav id="navigation">
+        <ul class="nav">
+            <li><a href="index.php" aria-current="page"><i class="fa fa-home fa-lg"></i></a></li>
+            <li><a href="newsletter.php">Newsletter</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h1><a id="logo" tabindex="-1" title="zurück zur Startseite!" href="index.html"><i
+            class="fa fa-fw fa-2x"></i>NoElLi-Network.net</a></h1>
+
+    <div class="carousel">
+        <div class="row">
+            <div class="col-md-1">
+                <p> </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-5 text-light">
+                <div th:if="${manager}">
+                    <div th:include="account/login :: login" />
+                </div>
+                <div th:unless="${manager}">
+                    <div th:include="account/register : register"/>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <ul id="myCarousel" class="slide inner">
+                    <li class="item active">
+                        <img src="img/title%20(1).jpg" alt="Battleship">
+                    </li>
+                    <li class="item">
+                        <img src="img/title%20(2).jpg" alt="CPU Background">
+                    </li>
+                    <li class="item">
+                        <img src="img/title%20(3).jpg" alt="Musik wibes">
+                    </li>
+                    <li class="item">
+                        <img th:src=""  alt="Minecraft landscape">
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-1">
+
+            </div>
+
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <p> </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section>
+        <h2> Über mich</h2>
+        <p>
+            Ich bin GLatzl Noah, 17 Jahre alt und gehe in die HTL für Wirtschaftsingeneure &amp; Betriebsinformatik
+        </p>
+    </section>
+
+    <section>
+        <h2> Hobby</h2>
+        <p>
+            Zu meinen Hobbies zähle ich Wettkampfschwimmen, Skifahren, Radfahren, Workout &amp; Programmieren
+        </p>
+    </section>
+
+    <section>
+        <h2> </h2>
+        <p>
+
+        </p>
+    </section>
+
+    <section>
+        <h2>Über meine Programme</h2>
+        <p>
+            Klicken Sie hier um folgende Informationen erhalten:
+        </p>
+    </section>
+
+    <section>
+
+
+
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <ul>
+            <li><i class="fa fa-envelope-o fa-2x"></i> <a>noah.glatzl@gmail.com</a></li>
+            <li><i class="fa fa-phone fa-2x"></i>&nbsp;&nbsp;&nbsp;<a href="">0664 3569165</a></li>
+            <li><i class="fa fa-caret-square-o-down fa-2x"></i>&nbsp;&nbsp;Download</li>
+        </ul>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/carousel.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

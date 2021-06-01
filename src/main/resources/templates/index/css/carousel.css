@@ -1,0 +1,78 @@
+/*!
+ * Bootstrap v2.3.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+.carousel{ 
+	position:relative;
+	height:auto;
+	background:#333;
+	line-height:1;
+}
+.carousel ul,.carousel ul li {margin:0;padding:0;}
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+.input-block-level{display:block;width:100%;min-height:30px;}
+
+.inner{
+	overflow:hidden;
+	width:75%;
+	height:auto;
+	position:relative;
+	float:right;
+}
+.inner>.item{display:none;position:relative;transition:0.6s ease-in-out left;}
+.inner>.item>img,.inner>.item>a>img{display:block;width:100%;height:auto;line-height:1;border-radius:5px;}
+.inner>.active,.inner>.next,.inner>.prev{display:block;}
+.inner>.active{left:0;}
+.inner>.next,.inner>.prev{position:absolute;top:0;width:100%;}
+.inner>.next{left:100%;}
+.inner>.prev{left:-100%;}
+.inner>.next.left,.inner>.prev.right{left:0;}
+.inner>.active.left{left:-100%;}
+.inner>.active.right{left:100%;}
+.carousel-control{position:absolute;top:40%;left:15px;width:40px;height:40px;margin-top:-20px;font-size:60px;font-weight:100;line-height:30px;color:#ffffff;text-align:center;}.carousel-control.right{left:auto;right:15px;}
+.carousel-control:hover,.carousel-control:focus{color:#ffffff;text-decoration:none;opacity:0.9;}
+.carousel ul.inner li img{}
+
+ul#carousel-nav {
+	float:left;
+	list-style-type:none;
+	text-align: center;
+	width:25%;
+	height:100%;
+}
+ul#carousel-nav li {display:inline-block;height:auto;width:20%;height:auto}
+#carousel-nav a {
+	background:orange;
+	display: block;
+	width:100%;
+	height:344px;
+	padding:5%;	
+	margin:5%;
+	position:relative;
+	float: left;
+	color: #eee;
+	border-radius:4px;
+	font-size:2em;
+}
+.rotate{
+	transform: rotate(270deg);	
+	writing-mode: bt-rl;
+	z-index:1;
+	font-size:.5em;
+	position: absolute;
+	top:4em;
+	width:130px;
+	height:50px;
+ 	left:-25px;
+}
+
+#carousel-nav a.active,
+#carousel-nav a:hover,
+#carousel-nav a:focus {
+	opacity:0.5;
+}
